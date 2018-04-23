@@ -5,13 +5,25 @@ package com.teaching.android;
  */
 public class JavaApp {
 
-    public static void main(String[] args) {
-        Punto p1 = new Punto(2,4);
-        Punto p2 = new Punto(3,5);
-    double distancia = p1.distancia(3,5);
-    System.out.println(distancia);
-    double distancia2 = p1.distancia(p2);
-    System.out.println(distancia2);
-    System.out.println(p1);
+    public static void main(String[] args) throws Exception {
+        Matriz m = new Matriz(3);
+        Matriz n = new Matriz(3);
+
+        int[] vector = {3, 2, 1, 1, 2, 3, 2, 3, 1};
+        m.asignarDatos(vector);
+
+        m.asignarDatos(new int[]{3, 2, 1, 1, 2, 3, 2, 3, 1});
+
+        int[] vector2 = {1, 1, 2, 2, 1, 1, 1, 2, 1};
+        n.asignarDatos(vector2);
+
+        m.mostrar();
+        n.mostrar();
+
+        m.producto(n);
+        m.mostrar();
+
+        m.suma(n);
+        m.mostrar();
     }
 }
